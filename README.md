@@ -60,6 +60,8 @@ pip install -r requirements.txt
 - tests\test_masks.py            8      1    88%
 - tests\test_processing.py       8      0   100%
 - tests\test_widget.py           8      0   100%
+TOTAL                          73       8    89%
+
 
 
 ## Документация:
