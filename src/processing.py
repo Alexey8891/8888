@@ -7,10 +7,9 @@ text_list = [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.
 def filter_by_state(text_list: list, state: str = 'EXECUTED') -> list[str]:
     """Функция фильтрации операции по ключу 'state'."""
     new_list = []
-    m_list = []
-    for i in text_list:
-        if i.get('state') == state:
-            new_list.append(i)
+    for text in text_list:
+        if text.get('state') == state:
+            new_list.append(text)
     return new_list
 
 

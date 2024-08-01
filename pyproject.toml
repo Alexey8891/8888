@@ -17,6 +17,10 @@ black = "^24.4.2"
 isort = "^5.13.2"
 
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -25,9 +29,6 @@ build-backend = "poetry.core.masonry.api"
 warn_return_any = true
 exclude = 'venv'
 
-[build-system]
-requires = ['poetry-core']
-build-backend = 'poetry.core'
 
 
 [tool.black]

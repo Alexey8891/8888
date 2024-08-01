@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
 def get_mask_account(acc_number: str) -> str:
     """Функция возвращает маску счёта."""
-    if len(acc_number) == 25:
+    if len(acc_number) == 20:
         return f'{'*' * 2}{acc_number[-4:]}'
     else:
         return ''
