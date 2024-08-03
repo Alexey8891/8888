@@ -19,6 +19,5 @@ def sort_by_date(text_list: list[dict[str]], reverse: bool = True) -> list[dict[
     return sorted_text_list
 
 
-
 print(filter_by_state(text_list, state='CANCELED'))
 print(sort_by_date(text_list))
