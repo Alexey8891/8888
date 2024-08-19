@@ -1,4 +1,4 @@
-from src.masks import  get_mask_card_number, get_mask_account_long
+from src.masks import get_mask_card_number, get_mask_account
 from datetime import datetime
 from typing import Any
 
@@ -6,7 +6,7 @@ from typing import Any
 def mask_account_card(card_number: str) -> str:
     """Функция которая маскирует номер карты и счёта."""
     if "Счет" in card_number:
-        mask_account = f"Счет {get_mask_account_long(card_number[:])}"
+        mask_account = f"Счет {get_mask_account(card_number[:])}"
         return mask_account
     elif "Счет" not in card_number:
         card_mask = get_mask_card_number(card_number[-16:])
