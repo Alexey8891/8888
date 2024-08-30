@@ -1,3 +1,7 @@
+from decorators import (log)
+
+
+@log()
 def get_mask_card_number(card: str) -> str:
     '''Функия маскирует номер карты.'''
     if len(card) == 16:
