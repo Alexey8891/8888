@@ -14,7 +14,7 @@ def mask_account_card(card_number: str) -> str:
         return mask
 
 
-    def get_date(data: Any) -> Any:
+def get_date(data: Any) -> Any:
         """Функция которая возвращает дату"""
         if data == "":
             return ""
