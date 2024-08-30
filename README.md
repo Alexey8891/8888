@@ -39,6 +39,29 @@ pip install -r requirements.txt
 
 - Нажмите сочетание клавиш Shift+F10
 
+## Тестирование:
+
+1. Произведено тестирование для модуля masks.py
+- На правильность ввода
+- На пустой ввод
+2. Произведено тестирование для модуля widget.py
+- На правильность вывода
+- На пустой ввод
+3. Произведено тестирование для модуля processing.py
+- С помощью фикстуры для проверки правильности работы модуля
+
+##  Покрытие тестами:
+- src\__init__.py                0      0   100%
+- src\masks.py                  11      2    82%
+- src\processing.py             12      0   100%
+- src\widget.py                 21      5    76%
+- tests\__init__.py              0      0   100%
+- tests\confest.py               5      0   100%
+- tests\test_masks.py            8      1    88%
+- tests\test_processing.py       8      0   100%
+- tests\test_widget.py           8      0   100%
+TOTAL                          73       8    89%
+
 
 
 ## Документация:
