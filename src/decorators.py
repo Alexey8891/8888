@@ -6,17 +6,17 @@ def log(filename=None):
             try:
                 result = func(*args, **kwargs)
                 if filename is None:
-                    print(f'{func} ok')
+                    print(f'{func.__name__} ok')
                 else:
                     with open(filename, 'w') as file:
-                        file.write(f'{func} ok')
+                        file.write(f'{func.__name__} ok')
                 return result
             except Exception as e:
                 if filename is None:
-                    print(f'{func} error: {e}  inputs:{args}, {kwargs}')
+                    print(f'{func.__name__} error: {e}  inputs:{args}, {kwargs}')
                 else:
                     with open(filename, 'w') as file:
-                        file.write(f'{func} error: {e}  inputs:{args}, {kwargs}')
+                        file.write(f'{func.__name__} error: {e}  inputs:{args}, {kwargs}')
         return wrapper
     return decor
 

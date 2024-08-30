@@ -1,4 +1,4 @@
-from decorators import (log)
+from src.decorators import (log)
 
 
 @log()
@@ -9,7 +9,7 @@ def get_mask_card_number(card: str) -> str:
     else:
         return ''
 
-
+@log()
 def get_mask_account(acc_number: str) -> str:
     """Функция возвращает маску счёта."""
     if len(acc_number) == 25:

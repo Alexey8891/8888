@@ -39,11 +39,15 @@ pip install -r requirements.txt
 
 - Нажмите сочетание клавиш Shift+F10
 
-**В модуле generator созданы 3 функции:
+**В модуле generators созданы 3 функции:
 
 - Функция возвращает итератор, который поочередно выдает транзакции
 - Функция принимает список словарей с транзакциями и возвращает описание каждой операции по очереди
 - Генератор итерирует и возвращает номера карт в заданном диапазоне
+
+**В модуле decorators создан декоратор log: 
+- Который автоматически логирует начало и конец выполнения функции
+- её результаты или возникшие ошибки.
 
 1. Произведено тестирование для модуля masks.py
 - На правильность ввода
@@ -53,22 +57,25 @@ pip install -r requirements.txt
 - На пустой ввод
 3. Произведено тестирование для модуля processing.py
 - С помощью фикстуры для проверки правильности работы модуля
-4.Произведено тестирование для модуля generators.py
+4. Произведено тестирование для модуля generators.py
+5. Произведено тестирование для модуля decorators.py
 
 ##  Покрытие тестами:
-- src\__init__.py                0      0   100%
-- src\generators.py             22      0   100%
-- src\masks.py                  11      2    82%
-- src\processing.py             12      0   100%
-- src\widget.py                 22      5    77%
-- tests\__init__.py              0      0   100%
-- tests\conftest.py              8      1    88%
-- tests\test_generators.py       7      0   100%
-- tests\test_masks.py            9      0   100%
-- tests\test_processing.py       7      0   100%
-- tests\test_widget.py           8      0   100%
+src\__init__.py                0      0   100%
+src\decorators.py             19      2    89%
+src\generators.py             22      0   100%
+src\masks.py                  14      2    86%
+src\processing.py             12      0   100%
+src\widget.py                 22      5    77%
+tests\__init__.py              0      0   100%
+tests\conftest.py              8      0   100%
+tests\test_decorators.py      18      0   100%
+tests\test_generators.py       7      0   100%
+tests\test_masks.py            9      0   100%
+tests\test_processing.py       7      0   100%
+tests\test_widget.py           8      0   100%
 ----------------------------------------------
-- TOTAL                        106      7    93%
+TOTAL                        146      9    94%
 
 
 
