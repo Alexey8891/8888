@@ -1,28 +1,4 @@
-import pytest
-from typing import Any
-
-
-@pytest.fixture
-def fixture_for_state() -> list[Any]:
-    return [
-        {"id": 41428829,
-         "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"
-         },
-        {"id": 939719570,
-         "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"
-         },
-        {"id": 54123123,
-         "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"
-         },
-        {"id": 123123123,
-         "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"
-         },
-    ]
-
-
-@pytest.fixture
-def fixture_by_currency():
-    return [
+transactions = [
         {
             "id": 939719570,
             "state": "EXECUTED",
@@ -99,3 +75,39 @@ def fixture_by_currency():
             "to": "Счет 14211924144426031657"
         }
     ]
+
+
+def filter_by_currency(transactions_: list, code: str):
+    """Функция возвращает итератор, который поочередно выдает транзакции"""
+    for trans in transactions_:
+        if trans.get("operationAmount", " ")["currency"]["code"] == code:
+            yield trans
+
+
+usd_transactions = filter_by_currency(transactions, "USD")
+
+for _ in range(2):
+    print(next(usd_transactions))
+
+
+def transaction_descriptions(transactions_):
+    """Функция принимает список словарей с транзакциями и возвращает описание каждой операции по очереди"""
+    for trans in transactions_:
+        yield trans["description"]
+
+
+for i in range (0,2):
+     print(next(transaction_descriptions(transactions)))
+
+
+def card_number_generator(first: int, last: int):
+    """Генератор итерирует и возвращает номера карт в заданном диапазоне"""
+    for card in range(first, last + 1):
+        card_numbers = str(card)
+        while len(card_numbers) < 16:
+            card_numbers = "0" + card_numbers
+        formatted_card_number = f"{card_numbers[0:4]} {card_numbers[4:8]} {card_numbers[8:12]} {card_numbers[-4:]}"
+        yield formatted_card_number
+
+for card_number in card_number_generator(1, 5):
+    print(card_number)
